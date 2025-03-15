@@ -1,0 +1,32 @@
+{
+	"name": "top",
+	"layer": "top",
+	"position": "top",
+	"height": 28,
+	"include": [
+		"~/.config/waybar/modules/clock.json",
+		"~/.config/waybar/modules/mouse.json",
+		"~/.config/waybar/modules/network.json",
+		"~/.config/waybar/modules/pulseaudio.json",
+		"~/.config/waybar/modules/sway.json",
+		"~/.config/waybar/modules/uptime.json",
+        "~/.config/waybar/modules/gpu.json"
+	],
+	"modules-left": [
+		"clock",
+		"custom/uptime"
+	],
+	"modules-center": [
+		"sway/workspaces"
+	],
+	"modules-right": [
+		"custom/mouse",
+		"pulseaudio",
+		"pulseaudio#source",
+		"tray"
+	],
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	}
+}

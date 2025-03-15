@@ -1,0 +1,14 @@
+{
+    "network": {
+        "interface": "eth0",
+        "interval": 1,
+        "format": "{ifname}",
+        "format-ethernet": "<span color='#b8bb26'></span> {bandwidthDownBytes} | <span color='#b8bb26'></span> {bandwidthUpBytes}",
+        "format-disconnected": "Disconnected <span color='#ea51b2'>⚠</span>",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+    }
+}

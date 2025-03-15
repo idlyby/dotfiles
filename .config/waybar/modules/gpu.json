@@ -1,0 +1,26 @@
+{
+    "custom/gpu": {
+        "exec": "~/.config/waybar/scripts/gpu-usage.sh",
+        "format": "{}",
+        "return-type": "",
+        "interval": 1
+    },
+    "custom/gpu-edge": {
+        "exec": "~/.config/waybar/scripts/gpu-temp.sh edge",
+        "format": "{}",
+        "return-type": "",
+        "interval": 1
+    },
+    "custom/gpu-junc": {
+        "exec": "~/.config/waybar/scripts/gpu-temp.sh junc",
+        "format": "{}",
+        "return-type": "",
+        "interval": 1
+    },
+    "custom/gpu-mem": {
+        "exec": "~/.config/waybar/scripts/gpu-temp.sh mem",
+        "format": "{}",
+        "return-type": "",
+        "interval": 1
+    }
+}

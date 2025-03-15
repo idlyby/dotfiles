@@ -1,0 +1,8 @@
+{
+    "clock": {
+		"interval": 60,
+		"tooltip": true,
+		"format": "<span color='#b8bb26'></span> {:%H:%M}",
+		"tooltip-format": "{:%Y-%m-%d}"
+	}
+}

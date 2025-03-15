@@ -1,0 +1,53 @@
+theme:
+  active: "{color2.rgb}" # current playing song in list
+  banner: "{color4.rgb}" # the "spotify-tui" banner on launch
+  error_border: "{color1.rgb}" # error dialog border
+  error_text: "{color5.rgb}" # error message text (e.g. "Spotify API reported error 404")
+  hint: "{color3.rgb}" # hint text in errors
+  hovered: Magenta # hovered pane border
+  inactive: "{color8.rgb}" # borders of inactive panes
+  playbar_background: "{color0.rgb}" # background of progress bar
+  playbar_progress: "{color4.rgb}" # filled-in part of the progress bar
+  playbar_progress_text: "{color4.rgb}" # song length and time played/left indicator in the progress bar
+  playbar_text: "{color7.rgb}" # artist name in player pane
+  selected: "{color2.rgb}" # a) selected pane border, b) hovered item in list, & c) track title in player
+  text: "{color7.rgb}" # text in panes
+  header: "{color7.rgb}" # header text in panes (e.g. 'Title', 'Artist', etc.)
+
+behavior:
+  seek_milliseconds: 5000
+  volume_increment: 10
+  tick_rate_milliseconds: 250
+  enable_text_emphasis: true
+  show_loading_indicator: true
+  enforce_wide_search_bar: false
+  liked_icon: ♥
+  shuffle_icon: 🔀
+  repeat_track_icon: 🔂
+  repeat_context_icon: 🔁
+  playing_icon: ▶
+  paused_icon: ⏸
+  set_window_title: true
+
+keybindings:
+  back: "ctrl-q"
+  jump_to_album: "a"
+  jump_to_artist_album: "A"
+  manage_devices: "d"
+  decrease_volume: "-"
+  increase_volume: "+"
+  toggle_playback: " "
+  seek_backwards: "<"
+  seek_forwards: ">"
+  next_track: "n"
+  previous_track: "p"
+  copy_song_url: "c"
+  copy_album_url: "C"
+  help: "?"
+  shuffle: "ctrl-s"
+  repeat: "r"
+  search: "/"
+  audio_analysis: "v"
+  jump_to_context: "o"
+  basic_view: "B"
+  add_item_to_queue: "z"

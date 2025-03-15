@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ "$XDG_CURRENT_DESKTOP" = sway ]; then
+  portal="/usr/lib/xdg-desktop-portal-wlr"
+elif [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+  portal="/usr/lib/xdg-desktop-portal-hyprland"
+else
+  exit 1
+fi
+
+sleep 10
+echo "Killing xdg-desktop-portals.."
+killall -e xdg-desktop-portal-gtk
+killall -e "$(basename "$portal")"
+killall xdg-desktop-portal
+echo "Starting xdg-desktop-portals.."
+"$portal" &
+sleep 2
+/usr/lib/xdg-desktop-portal &

@@ -1,0 +1,5 @@
+alias code='code --extensions-dir "$XDG_DATA_HOME/vscode"'
+alias mvn='mvn -gs "$XDG_CONFIG_HOME/maven/settings.xml"'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias mv='mv --verbose'
+alias cp='cp --verbose'

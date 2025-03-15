@@ -1,0 +1,7 @@
+{
+    "custom/mouse": {
+        "exec": "~/.config/waybar/scripts/mouse-profile.sh",
+        "interval": 60,
+        "format": "{}"
+    }
+}

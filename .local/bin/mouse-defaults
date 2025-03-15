@@ -1,0 +1,8 @@
+#/usr/bin/env bash
+
+DEFAULT_DPI=800
+
+DEVICE=$(ratbagctl | awk '{print $1}' | sed 's/://g')
+DPI=$(ratbagctl "$DEVICE" dpi get)
+
+[[ "${DPI/dpi/}" != "${DEFAULT_DPI}" ]] && ratbagctl "$DEVICE" dpi set "$DEFAULT_DPI"

@@ -1,0 +1,8 @@
+{
+    "custom/uptime": {
+		"format": "{}",
+		"tooltip": false,
+		"interval": 60,
+		"exec": "~/.config/waybar/scripts/uptime-pretty.sh"
+	}
+}

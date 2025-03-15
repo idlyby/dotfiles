@@ -1,0 +1,16 @@
+export THEME_FONT_FACE="Iosevka Nerd Font"
+export THEME_FONT_SIZE="10"
+
+export XCURSOR_SIZE=24
+export XCURSOR_THEME="capitaine-cursors-light"
+
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+export CLUTTER_BACKEND=wayland
+
+export SDL_VIDEODRIVER="wayland,x11"
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export ELECTRON_OZONE_PLATFORM_HINT=wayland

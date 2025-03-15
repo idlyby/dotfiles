@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+export GAMEDIR=/home/edward/.local/share/games/battlenet
+export WINEPREFIX=/home/edward/.local/share/wineprefixes/battlenet
+export PROTONPATH=/home/edward/.local/share/Steam/compatibilitytools.d/GE-Proton9-23
+export GAMEID=umu-battlenet
+
+export DXVK_HUD=compiler
+export DXVK_STATE_CACHE_PATH="$GAMEDIR"
+export STAGING_SHARED_MEMORY=1
+export __GL_SHADER_DISK_CACHE=1
+export __GL_SHADER_DISK_CACHE_PATH="$GAMEDIR"
+export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+
+export WINEDLLOVERRIDES="location=d"
+
+umu-run "$GAMEDIR/Battle.net/Battle.net Launcher.exe" -Displaymode 1

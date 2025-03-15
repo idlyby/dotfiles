@@ -1,0 +1,11 @@
+{
+    "cpu": {
+		"interval": 5,
+		"format": "<span color='#b8bb26'></span> {usage}% ({load})",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		},
+		"on-click": "kitty --class=htop -e htop"
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "custom/disk-root": {
+		"interval": 30,
+		"tooltip": false,
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/disk-usage.sh /"
+	},
+    "custom/disk-bottle": {
+		"interval": 60,
+		"tooltip": false,
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/disk-usage.sh /mnt/bottle"
+	},
+    "custom/disk-flask": {
+		"interval": 60,
+		"tooltip": false,
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/disk-usage.sh /mnt/flask"
+	}
+}

@@ -1,3 +1,66 @@
 *
 
 !.gitignore
+!.gitconfig
+
+## Config
+!.config/
+!.config/**
+.config/.avalonia-build-tasks
+.config/autostart
+.config/Bitwarden
+.config/bolt-launcher
+.config/BraveSoftware
+.config/cef_user_data
+.config/cni
+.config/Code
+.config/CurseForge
+.config/dconf
+.config/Electron
+.config/electron-mail
+.config/FF Logs Uploader
+.config/GIMP
+.config/glib-2.0
+.config/go
+.config/godot
+.config/htop
+.config/hypr
+.config/ibus
+.config/inkscape
+.config/kitty
+.config/legendary
+.config/l3afpad
+.config/libfm
+.config/maven
+.config/menus
+.config/mopidy
+.config/mpv
+.config/Mullvad VPN
+.config/neofetch
+.config/npm
+.config/NuGet
+.config/obs-studio
+.config/ow-electron
+.config/pulse
+.config/pupgui
+.config/qutebrowser
+.config/ranger
+.config/rbw
+.config/rncbc.org
+.config/Ryujinx
+.config/spotify
+.config/streamlink-twitch-gui
+.config/systemd
+.config/unity3d
+.config/vesktop
+.config/vlc
+.config/XIVLauncher
+.config/xsettingsd
+.config/electron-builder.json
+.config/jd-gui.cfg
+
+
+## Userscripts
+!.local/
+!.local/bin
+!.local/bin/**

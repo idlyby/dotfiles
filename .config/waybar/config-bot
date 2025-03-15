@@ -1,0 +1,25 @@
+{
+	"name": "bot",
+	"layer": "top",
+	"position": "bottom",
+	"height": 28,
+	"include": [
+		"~/.config/waybar/modules/cpu.json",
+		"~/.config/waybar/modules/disk.json",
+		"~/.config/waybar/modules/gpu.json",
+		"~/.config/waybar/modules/memory.json",
+		"~/.config/waybar/modules/network.json"
+	],
+	"modules-left": [
+		"memory",
+		"cpu"
+	],
+	"modules-center": [
+        "gpu"
+	],
+	"modules-right": [
+		"custom/disk-root",
+		"custom/disk-bottle",
+		"custom/disk-vault"
+	]
+}
