@@ -58,7 +58,8 @@
 .config/xsettingsd
 .config/electron-builder.json
 .config/jd-gui.cfg
-
+.config/VirtualBox
+.config/zsh/.zcompdump-*
 
 ## Userscripts
 !.local/
