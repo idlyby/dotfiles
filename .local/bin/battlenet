@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export GAMEDIR=/home/edward/.local/share/games/battlenet
+export GAMEDIR=/home/edward/.local/games/battlenet
 export WINEPREFIX=/home/edward/.local/share/wineprefixes/battlenet
 export PROTONPATH=/home/edward/.local/share/Steam/compatibilitytools.d/GE-Proton9-23
 export GAMEID=umu-battlenet
