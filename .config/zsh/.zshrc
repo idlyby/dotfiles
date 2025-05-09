@@ -2,7 +2,7 @@
 
 export ZSH=/usr/share/oh-my-zsh/
 
-export PATH=${PATH}${PATH:+:}${HOME}/.local/bin
+export PATH=${HOME}/.local/bin:${PATH}
 export PATH=${PATH}${PATH:+:}${XDG_DATA_HOME}/cargo/bin
 
 export HISTFILE="${XDG_STATE_HOME}"/zsh/history

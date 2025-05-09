@@ -3,7 +3,7 @@
         "interface": "eth0",
         "interval": 1,
         "format": "{ifname}",
-        "format-ethernet": "<span color='#b8bb26'></span> {bandwidthDownBytes} | <span color='#b8bb26'></span> {bandwidthUpBytes}",
+        "format-ethernet": "<span color='#b45bcf'></span> {bandwidthDownBytes} | <span color='#b45bcf'></span> {bandwidthUpBytes}",
         "format-disconnected": "Disconnected <span color='#ea51b2'>⚠</span>",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",

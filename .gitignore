@@ -7,6 +7,7 @@
 !.config/
 !.config/**
 .config/.avalonia-build-tasks
+.config/abiword
 .config/autostart
 .config/Bitwarden
 .config/bolt-launcher
@@ -18,7 +19,9 @@
 .config/dconf
 .config/Electron
 .config/electron-mail
+.config/eso-addons
 .config/FF Logs Uploader
+.config/ghidra
 .config/GIMP
 .config/glib-2.0
 .config/go
@@ -31,6 +34,8 @@
 .config/legendary
 .config/l3afpad
 .config/libfm
+.config/libreoffice
+.config/lyrebird
 .config/maven
 .config/menus
 .config/mopidy
@@ -52,6 +57,7 @@
 .config/streamlink-twitch-gui
 .config/systemd
 .config/unity3d
+.config/Upscayl
 .config/vesktop
 .config/vlc
 .config/XIVLauncher

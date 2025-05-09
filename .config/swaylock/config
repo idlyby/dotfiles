@@ -11,14 +11,14 @@ font-size=10
 # Ring
 indicator-radius=115
 # line-uses-ring
-line-color=#3b4252
-text-color=#d8dee9
-inside-color=#2e344098
-inside-ver-color=#5e81ac
-line-ver-color=#5e81ac
-ring-ver-color=#5e81ac98
-ring-color=#4c566a
-key-hl-color=#5e81ac
-separator-color=#4c566a
-layout-text-color=#eceff4
-line-wrong-color=#d08770
+line-color=#4d4f68
+text-color=#e9e9f4
+inside-color=#28293698
+inside-ver-color=#b45bcf
+line-ver-color=#b45bcf
+ring-ver-color=#b45bcf98
+ring-color=#4d4f68
+key-hl-color=#b45bcf
+separator-color=#4d4f68
+layout-text-color=#e9e9f4
+line-wrong-color=#ea51b2

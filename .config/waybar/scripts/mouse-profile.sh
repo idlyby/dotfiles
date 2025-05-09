@@ -9,4 +9,4 @@ _id=$(ratbagctl list | cut -d":" -f1)
 _profile=$(ratbagctl "${_id}" profile active get)
 _dpi=$(ratbagctl "${_id}" dpi get)
 
-echo "<span color='${color2}'>󰍽</span> Profile ${_profile}: ${_dpi}"
+echo "<span color='${color5}'>󰍽</span> Profile ${_profile}: ${_dpi}"

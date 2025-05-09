@@ -34,7 +34,7 @@
 
 * button:hover {
     box-shadow: inherit;
-    background: shade(alpha(@color2, 0.1), 1.25);
+    background: shade(alpha(@color5, 0.1), 1.25);
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -145,7 +145,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    border-bottom: 2px solid @color2;
+    border-bottom: 2px solid @color5;
     margin-bottom: 0px;
 }
 

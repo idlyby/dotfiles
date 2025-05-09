@@ -31,6 +31,7 @@ dca
 dm_log
 dm_mirror
 dm_mod
+dm_multipath
 dm_region_hash
 drm_buddy
 drm_display_helper
@@ -62,6 +63,8 @@ iptable_filter
 iptable_mangle
 iptable_nat
 ip_tables
+ipt_REJECT
+irqbypass
 jbd2
 jfs
 joydev
@@ -92,6 +95,7 @@ nf_reject_ipv4
 nf_reject_ipv6
 nf_tables
 nft_chain_nat
+nft_compat
 nft_ct
 nft_fib
 nft_fib_inet
@@ -182,6 +186,7 @@ xhci_pci_renesas
 xor
 x_tables
 xt_CHECKSUM
+xt_conntrack
 xt_MASQUERADE
 xt_tcpudp
 zram

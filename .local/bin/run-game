@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -x
+
+function help_menu {
+    echo 'ye'
+    exit 1
+}
+
+if [ $# -eq 0 ]; then
+    help_menu
+fi
+
+LD_PRELOAD="" ENABLE_GAMESCOPE_WSI=1 /usr/bin/gamemoderun /usr/bin/gamescope --hdr-enabled -- "$*"

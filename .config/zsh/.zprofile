@@ -9,7 +9,7 @@ export NINJAFLAGS="-j${BUILD_THREADS}"
 #################################################
 
 export TERMINAL=kitty
-export BROWSER=qutebrowser
+export BROWSER=brave                                  
 export EDITOR=vim
 export VISUAL=l3afpad
 

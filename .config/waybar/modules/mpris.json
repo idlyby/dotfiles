@@ -1,6 +1,6 @@
 {
     "mpris": {
-        "format": "<span color='#b8bb26'>{player_icon}</span> {dynamic}",
+        "format": "<span color='#b45bcf'>{player_icon}</span> {dynamic}",
         "format-paused": "<span color='#ea51b2'>{status_icon}</span> <i>{dynamic}</i>",
         "player-icons": {
             "default": "▶",

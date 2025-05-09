@@ -23,8 +23,8 @@
 		"custom/mouse",
 		"pulseaudio",
 		"pulseaudio#source",
-		"tray"
-	],
+        "tray"
+    ],
 	"tray": {
 		"icon-size": 16,
 		"spacing": 10

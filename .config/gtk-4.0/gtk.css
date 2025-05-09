@@ -1,12 +1,1 @@
-window#whiskermenu-window treeview > * {
-    padding: 0.2em 0.16em;
-}
-
-#pulseaudio-button image {
-    -gtk-icon-transform: scale(0.9);
-}
-
-VteTerminal,
-vte-terminal {
-    padding: 13px;
-}
+/usr/share/themes/Nordic/gtk-4.0/gtk.css

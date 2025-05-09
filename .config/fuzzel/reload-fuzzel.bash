@@ -7,11 +7,11 @@ declare -A colors
 colors=(
     ["background"]="${color0//#/}dd"
     ["text"]="${color7//#/}ff"
-    ["match"]="${color4//#/}ff"
-    ["selection"]="${color2//#/}dd"
-    ["selection-match"]="${color5//#/}ff"
-    ["selection-text"]="${color8//#/}ff"
-    ["border"]="${color2//#/}ff"
+    ["match"]="${color2//#/}ff"
+    ["selection"]="${color5//#/}dd"
+    ["selection-match"]="${color4//#/}ff"
+    ["selection-text"]="${color15//#/}ff"
+    ["border"]="${color5//#/}ff"
 )
 
 for color_name in "${!colors[@]}"; do
