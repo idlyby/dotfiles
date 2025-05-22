@@ -3,7 +3,7 @@
 set -x
 
 function help_menu {
-    echo 'ye'
+    echo 'todo'
     exit 1
 }
 
@@ -11,4 +11,6 @@ if [ $# -eq 0 ]; then
     help_menu
 fi
 
-LD_PRELOAD="" ENABLE_GAMESCOPE_WSI=1 /usr/bin/gamemoderun /usr/bin/gamescope --hdr-enabled -- "$*"
+echo "$*"
+
+eval "env DXVK_HDR=1 ENABLE_HDR_WSI=1 PROTON_ENABLE_WAYLAND=1 LD_PRELOAD='' /usr/bin/gamemoderun /usr/bin/gamescope -f --backend wayland -w 2560 -h 1440 -r 144 -- $*"

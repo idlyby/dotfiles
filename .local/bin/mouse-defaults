@@ -1,8 +1,12 @@
 #/usr/bin/env bash
 
-DEFAULT_DPI=800
+DEFAULT_DPI=900
+DEFAULT_PROFILE=1
 
 DEVICE=$(ratbagctl | cut -f1 -d":")
-DPI=$(ratbagctl "$DEVICE" dpi get)
 
+PROFILE=$(ratbagctl "$DEVICE" profile active get)
+[[ "${PROFILE}" != "$DEFAULT_PROFILE" ]] && ratbagctl "$DEVICE" profile active set "$DEFAULT_PROFILE"
+
+DPI=$(ratbagctl "$DEVICE" dpi get)
 [[ "${DPI/dpi/}" != "${DEFAULT_DPI}" ]] && ratbagctl "$DEVICE" dpi set "$DEFAULT_DPI"

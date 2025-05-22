@@ -1,7 +1,7 @@
 # output=<not set>
 font=Iosevka Nerd Font Mono:size=14
 dpi-aware=no
-prompt="❯  "
+# prompt="⮕  "
 icon-theme=gruvbox-dark-icons-gtk
 # icons-enabled=yes
 # fields=filename,name,generic
@@ -10,7 +10,7 @@ icon-theme=gruvbox-dark-icons-gtk
 # fuzzy=yes
 # show-actions=no
 terminal=kitty
-# launch-prefix=<not set>
+# launch-prefix=
 # list-executables-in-path=no
 
 # anchor=center
@@ -31,16 +31,16 @@ exit-on-keyboard-focus-loss = no
 
 [colors]
 background={color0.strip}dd
-text={color8.strip}ff
+text={color7.strip}f
 match={color2.strip}ff
-selection-match={color5.strip}ff
-selection={color4.strip}dd
-selection-text={color7.strip}ff
-border={color2.strip}ff
+selection={color5.strip}dd
+selection-match={color4.strip}ff
+selection-text={color15.strip}ff
+border={color5.strip}ff
 
 [border]
 width=3
-# radius=10
+radius=12
 
 [dmenu]
 # mode=text  # text|index
