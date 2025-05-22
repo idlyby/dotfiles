@@ -111,6 +111,7 @@ ntfs3
 nvme
 nvme_auth
 nvme_core
+nvme_keyring
 overlay
 pcspkr
 poly1305_x86_64
@@ -128,9 +129,12 @@ sha256_ssse3
 sha512_ssse3
 snd
 snd_hda_codec
+snd_hda_codec_generic
 snd_hda_codec_hdmi
+snd_hda_codec_realtek
 snd_hda_core
 snd_hda_intel
+snd_hda_scodec_component
 snd_hrtimer
 snd_hwdep
 snd_intel_dspcfg
@@ -140,6 +144,8 @@ snd_rawmidi
 snd_seq
 snd_seq_device
 snd_seq_dummy
+snd_seq_midi
+snd_seq_midi_event
 snd_timer
 snd_ump
 snd_usb_audio

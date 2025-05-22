@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+mouse_name=$(ratbagctl "$(ratbagctl | cut -f1 -d":")" name)
+mouse_id=$(swaymsg -t get_inputs | jq -r --arg mouse_name "$mouse_name" '..|try select(.type == "pointer") | select(.name == $mouse_name) | .identifier')
+lockfile="${XDG_CACHE_HOME}/${mouse_id}.lockfile"
+
+if [ ! -f "${lockfile}" ]; then
+    touch "${lockfile}"
+    swaymsg "input ${mouse_id} map_to_output DP-1"
+else
+    rm "${lockfile}"
+    swaymsg "input ${mouse_id} map_to_output *"
+fi

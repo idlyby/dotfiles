@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+SELECTION="$(printf "󰌾 Lock %11s\n󰤄 Suspend %8s\n󰍃 Log out %8s\n Reboot %9s\n Reboot to UEFI %1s\n󰐥 Reboot to Windows %1s\n󰐥 Shutdown %7s" | fuzzel --dmenu -a top-right -l 7 -w 22 -p "Select an option: ")"
+
+confirm_action() {
+  local action="$1"
+  CONFIRMATION="$(printf "No %12s\nYes %11s" | fuzzel --dmenu -a top-right -l 2 -w 20 -p "$action?")"
+  [[ "$CONFIRMATION" == *"Yes"* ]]
+}
+
+case $SELECTION in
+  *"Lock"*)
+    swaylock -C ~/.config/swaylock/config;;
+  *"Suspend"*)
+    if confirm_action "Suspend"; then
+      systemctl suspend
+    fi;;
+  *"Log out"*)
+    if confirm_action "Log out"; then
+      uwsm stop
+    fi;;
+  *"Reboot to UEFI"*)
+    if confirm_action "Reboot to UEFI"; then
+      systemctl reboot --firmware-setup
+    fi;;
+  *"Reboot to Windows"*)
+    if confirm_action "Reboot to Windows"; then
+      systemctl reboot --boot-loader-entry=auto-windows
+    fi;;
+  *"Reboot"*)
+    if confirm_action "Reboot"; then
+      systemctl reboot
+    fi;;
+  *"Shutdown"*)
+    if confirm_action "Shutdown"; then
+      systemctl poweroff
+    fi;;
+esac

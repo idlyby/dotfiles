@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+filepath="$(xdg-user-dir PICTURES)/Screenshots"
+filename=screenshot_$(date +"%y-%m-%d_%H-%M-%S").png
+entries="Active Screen Output Area Window Anything"
+
+if [ -n "$1" ]; then
+  selected="$1"
+else
+  selected=$(echo "${entries}" | tr ' ' '\n' | fuzzel -d -a top-right -l 6 -w 20 | awk '{print tolower($1)}')
+fi
+
+if [ -z "$selected" ]; then
+  exit 0
+fi
+
+
+/usr/share/sway-contrib/grimshot --cursor --notify savecopy "$selected" "${filepath}/${filename//screenshot/${selected}}"
