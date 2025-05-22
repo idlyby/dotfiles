@@ -1,0 +1,16 @@
+[Unit]
+Description=Autotiling for sway/i3
+Documentation=https://github.com/nwg-piotr/autotiling
+After=graphical-session.target
+After=wayland-session@sway.desktop.target
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway" ""
+ExecStart=autotiling
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+# WantedBy=graphical-session.target
+WantedBy=wayland-session@sway.desktop.target

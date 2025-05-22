@@ -1,0 +1,16 @@
+[Unit]
+Description=Sway idle and locking handler
+Documentation=man:swayidle(1)
+After=graphical-session.target
+After=wayland-session@sway.desktop.target
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=swayidle -w before-sleep 'swaylock -C ~/.config/swaylock/config' 
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+# WantedBy=graphical-session.target
+WantedBy=wayland-session@sway.desktop.target

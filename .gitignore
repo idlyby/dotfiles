@@ -55,7 +55,14 @@
 .config/Ryujinx
 .config/spotify
 .config/streamlink-twitch-gui
-.config/systemd
+.config/systemd/user/default.target.wants
+.config/systemd/user/graphical-session.target.wants
+.config/systemd/user/graphical.target.wants
+.config/systemd/user/multi-user.target.wants
+.config/systemd/user/pipewire.service.wants
+.config/systemd/user/sockets.target.wants
+.config/systemd/user/wayland-session@hyprland.desktop.target.wants
+.config/systemd/user/wayland-session@sway.desktop.target.wants
 .config/unity3d
 .config/Upscayl
 .config/vesktop

@@ -1,0 +1,20 @@
+[Unit]
+Description=day/night gamma adjustments for Wayland compositors supporting wlr-gamma-control-unstable-v1.
+Documentation=man:wlsunset(5)
+After=graphical-session.target
+After=wayland-session@sway.desktop.target
+After=wayland-session@hyprland.desktop.target
+After=geoclue2.service
+BindsTo=geoclue2.service
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=/usr/local/bin/wlsunset -t 5000 -T 6500
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+# WantedBy=graphical-session.target
+WantedBy=wayland-session@sway.desktop.target
+WantedBy=wayland-session@hyprland.desktop.target

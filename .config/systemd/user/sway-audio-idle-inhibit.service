@@ -1,0 +1,17 @@
+[Unit]
+Description=Sway idle and locking handler
+After=graphical-session.target
+After=wayland-session@sway.desktop.target
+After=swayidle.service
+BindsTo=swayidle.service
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=/usr/bin/sway-audio-idle-inhibit
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+# WantedBy=graphical-session.target
+WantedBy=wayland-session@sway.desktop.target

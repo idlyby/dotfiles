@@ -1,0 +1,15 @@
+[Unit]
+Description=Hypr idle and locking handler
+After=graphical-session.target
+After=wayland-session@hyprland.desktop.target
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=hypridle 
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+# WantedBy=graphical-session.target
+WantedBy=wayland-session@hyprland.desktop.target

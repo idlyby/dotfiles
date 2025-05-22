@@ -1,0 +1,11 @@
+[Unit]
+Description=Geoclue is a D-Bus geoinformation service
+
+[Service]
+Type=exec
+ExecStart=/usr/lib/geoclue-2.0/demos/agent
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=default.target
