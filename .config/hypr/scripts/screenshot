@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+filepath="$(xdg-user-dir PICTURES)/Screenshots"
+filename=screenshot_$(date +"%y-%m-%d_%H-%M-%S").png
+
+screenshot="/usr/bin/grimblast"
+params="--cursor --notify copysave"
+entries="Active Screen Output Area"
+
+if [ -n "$1" ]; then
+    selected="$1"
+else
+    selected=$(echo "${entries}" | tr ' ' '\n' | fuzzel -d -a top-right -l 6 -w 20 | awk '{print tolower($1)}')
+fi
+
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+grimblast --cursor --notify copysave "$selected" "${filepath}/${filename//screenshot/${selected}}"
