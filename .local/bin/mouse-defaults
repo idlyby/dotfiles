@@ -1,6 +1,6 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
-DEFAULT_DPI=900
+DEFAULT_DPI=1000
 DEFAULT_PROFILE=1
 
 DEVICE=$(ratbagctl | cut -f1 -d":")
