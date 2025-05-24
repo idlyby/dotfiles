@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+notify-send "Ending gamemode.."
+if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+    if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 0 ]; then
+        hyprctl reload
+    fi
+fi

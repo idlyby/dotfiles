@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+set -x
+notify-send "Starting gamemode.."
+if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+    if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 1 ]; then
+        hyprctl --batch "\
+            keyword animations:enabled 0;\
+            keyword decoration:shadow:enabled 0;\
+            keyword decoration:blur:enabled 0"
+        exit
+    fi
+fi
