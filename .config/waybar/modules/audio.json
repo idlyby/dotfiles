@@ -1,5 +1,5 @@
 {
-    "pulseaudio": {
+        "pulseaudio": {
 		"scroll-step": 1,
 		"format": "<span color='#b45bcf'>{icon}</span> {volume}%",
 		"format-muted": "<span color='#ea51b2'></span>",
@@ -27,5 +27,24 @@
 		"on-click": "pamixer --default-source -t",
 		"on-scroll-up": "pamixer --default-source -ui 1",
 		"on-scroll-down": "pamixer --default-source -ud 1"
+	},
+    "wireplumber": {
+		"scroll-step": 0.2,
+		"format": "<span color='#b45bcf'>{icon}</span> {volume}%",
+		"format-muted": "<span color='#ea51b2'></span>",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "󱡏",
+			"headset": "󰋏",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "helvum"
 	}
 }

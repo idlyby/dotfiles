@@ -81,6 +81,8 @@ tooltip {
 #pulseaudio.source,
 #temperature,
 #tray,
+#wireplumber,
+#wireplumber.source,
 #workspaces,
 #window {
     border: 2px solid @color8;
