@@ -43,6 +43,9 @@
 .config/neofetch
 .config/npm
 .config/NuGet
+.config/nwg-panel/icons_color
+.config/nwg-panel/icons_dark
+.config/nwg-panel/icons_light
 .config/obs-studio
 .config/ow-electron
 .config/pulse

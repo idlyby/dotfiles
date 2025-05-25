@@ -1,50 +1,58 @@
 {
-        "pulseaudio": {
-		"scroll-step": 1,
-		"format": "<span color='#b45bcf'>{icon}</span> {volume}%",
-		"format-muted": "<span color='#ea51b2'></span>",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "󱡏",
-			"headset": "󰋏",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				""
-			]
-		},
-		"on-click": "pavucontrol",
-		"on-scroll-up": "pamixer -ui 1",
-		"on-scroll-down": "pamixer -ud 1"
-	},
-	"pulseaudio#source": {
-		"format": "{format_source}",
-		"format-source": "<span color='#b45bcf'></span> {volume}%",
-		"format-source-muted": "<span color='#ea51b2'></span>",
-		"on-click": "pamixer --default-source -t",
-		"on-scroll-up": "pamixer --default-source -ui 1",
-		"on-scroll-down": "pamixer --default-source -ud 1"
-	},
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_0c_00.4.pro-output-0": "󰋋",
+            "alsa_output.pci-0000_0c_00.4.pro-output-0-muted": "󰟎",
+            "alsa_output.pci-0000_0a_00.1.pro-output-8": "󰽟",
+            "alsa_output.pci-0000_0a_00.1.pro-output-8-muted": "󰽠",
+            "alsa_output.pci-0000_0a_00.1.pro-output-10": "󰽟",
+            "alsa_output.pci-0000_0a_00.1.pro-output-10-muted": "󰽠",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pwvucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "<span color='#ea51b2'></span>",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -ui 1",
+        "on-scroll-down": "pamixer --default-source -ud 1"
+    },
     "wireplumber": {
-		"scroll-step": 0.2,
-		"format": "<span color='#b45bcf'>{icon}</span> {volume}%",
-		"format-muted": "<span color='#ea51b2'></span>",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "󱡏",
-			"headset": "󰋏",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				""
-			]
-		},
-		"on-click": "helvum"
-	}
+        "scroll-step": 0.2,
+        "format": "<span color='#b45bcf'>{icon}</span> {volume}%",
+        "format-muted": "<span color='#ea51b2'></span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󱡏",
+            "headset": "󰋏",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "helvum"
+    }
 }

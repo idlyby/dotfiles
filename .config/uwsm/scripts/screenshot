@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+filepath="$(xdg-user-dir PICTURES)/Screenshots"
+filename=screenshot_$(date +"%y-%m-%d_%H-%M-%S").png
+
+if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+    screenshot="/usr/bin/grimblast"
+    params="--cursor --notify copysave"
+    entries="Active Screen Output Area"
+elif [ "$XDG_CURRENT_DESKTOP" = "sway" ]; then
+    screenshot="/usr/share/sway-contrib/grimshot"
+    params="--cursor --notify savecopy"
+    entries="Active Screen Output Area Window Anything"
+else
+    exit 0
+fi
+
+eval "$screenshot check" >/dev/null
+
+if [ -n "$1" ]; then
+    selected="$1"
+else
+    selected=$(echo "${entries}" | tr ' ' '\n' | fuzzel -d -a top-right -l 6 -w 20 | awk '{print tolower($1)}')
+fi
+
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+eval "$screenshot $params $selected ${filepath}/${filename//screenshot/${selected}}"

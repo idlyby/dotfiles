@@ -6,15 +6,18 @@
 	"include": [
         "~/.config/waybar/modules/audio.json",
 		"~/.config/waybar/modules/clock.json",
+        "~/.config/waybar/modules/media.json",
 		"~/.config/waybar/modules/mouse.json",
 		"~/.config/waybar/modules/network.json",
+        "~/.config/waybar/modules/notification.json",
 		"~/.config/waybar/modules/uptime.json",
         "~/.config/waybar/modules/gpu.json",
         "~/.config/waybar/modules/workspaces.json"
 	],
 	"modules-left": [
 		"clock",
-		"custom/uptime"
+		"custom/uptime",
+        "custom/media"
 	],
 	"modules-center": [
 		"sway/workspaces",
@@ -22,8 +25,9 @@
 	],
 	"modules-right": [
 		"custom/mouse",
-		"wireplumber",
+		"pulseaudio",
 		"pulseaudio#source",
+        "custom/notification",
         "tray"
     ],
 	"tray": {

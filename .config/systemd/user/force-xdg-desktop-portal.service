@@ -7,7 +7,7 @@ After=wayland-session@hyprland.desktop.target
 [Service]
 Type=oneshot
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=/usr/local/bin/force-xdg-desktop-portal
+ExecStart=%h/.local/bin/force-xdg-desktop-portal
 Restart=on-failure
 Slice=app-graphical.slice
 

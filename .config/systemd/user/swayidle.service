@@ -7,7 +7,7 @@ After=wayland-session@sway.desktop.target
 [Service]
 Type=exec
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=swayidle -w timeout 3600 gtklock timeout 7200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep gtklock
+ExecStart=swayidle -w timeout 3600 'gtklock -s %h/.config/gtklock/style.css' timeout 7200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep gtklock
 Restart=on-failure
 Slice=background-graphical.slice
 

@@ -68,7 +68,9 @@ tooltip {
 #custom-gpu-edge,
 #custom-gpu-junc,
 #custom-gpu-mem,
+#custom-media,
 #custom-mouse,
+#custom-notification,
 #custom-updates,
 #custom-uptime,
 #gamemode,
@@ -147,11 +149,15 @@ tooltip {
 }
 
 #workspaces button.focused {
-    border-bottom: 2px solid @color5;
+    border-bottom: 2px solid @color15;
     margin-bottom: 0px;
 }
 
 #workspaces button.urgent {
     border-color: @color1;
     color: @color1;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
 }

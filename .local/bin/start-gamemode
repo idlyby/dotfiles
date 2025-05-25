@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
-set -x
-notify-send "Starting gamemode.."
+# set -x
+# notify-send "Starting gamemode.."
+
+systemctl --user stop wlsunset.service
+
 if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
     if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 1 ]; then
         hyprctl --batch "\

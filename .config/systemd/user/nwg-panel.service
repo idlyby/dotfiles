@@ -1,6 +1,5 @@
 [Unit]
 Description=Highly customizable Wayland bar for Sway and Wlroots based compositors.
-Documentation=man:waybar(5)
 After=graphical-session.target
 After=wayland-session@sway.desktop.target
 After=wayland-session@hyprland.desktop.target
@@ -9,8 +8,8 @@ After=wayland-session@hyprland.desktop.target
 Type=exec
 # Repurpose XDG Autostart filtering
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=/usr/bin/waybar -b top
-ExecReload=kill -SIGUSR2 $MAINPID
+ExecStart=/usr/bin/nwg-panel
+ExecReload=kill -SIGINT $MAINPID
 Restart=on-failure
 Slice=app-graphical.slice
 

@@ -3,14 +3,17 @@ Description=notification daemon for sway.
 Documentation=man:swaync(1)
 After=graphical-session.target
 After=wayland-session@sway.desktop.target
+After=wayland-session@hyprland.desktop.target
 
 [Service]
 Type=exec
+WorkingDirectory=%h/.config/swaync
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=/usr/bin/swaync
+ExecStart=/usr/bin/swaync -s %h/.config/swaync/style.css
 Restart=on-failure
 Slice=app-graphical.slice
 
 [Install]
 WantedBy=graphical-session.target
 WantedBy=wayland-session@sway.desktop.target
+WantedBy=wayland-session@hyprland.desktop.target

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 DEFAULT_DPI=1000
 DEFAULT_PROFILE=1

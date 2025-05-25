@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -x
+
+location=$(/usr/lib/geoclue-2.0/demos/where-am-i --timeout=1 | head -n 5 | tail -n 2 | awk '{print $2}' | sed 's/°//g')
+lat=$(echo $location | cut -d' ' -f1)
+long=$(echo $location | cut -d' ' -f2)
+
+eval "/usr/bin/wlsunset -l $(printf '%.2f' "$lat") -L $(printf '%.2f' "$long") -t 5000 -T 6500 $*"

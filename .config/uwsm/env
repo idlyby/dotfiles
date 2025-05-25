@@ -4,6 +4,8 @@ export THEME_FONT_SIZE="10"
 export XCURSOR_SIZE=24
 export XCURSOR_THEME="Dracula-cursors"
 
+export GDK_BACKEND="wayland,x11"
+
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 

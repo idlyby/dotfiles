@@ -10,7 +10,7 @@ BindsTo=geoclue2.service
 [Service]
 Type=exec
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=/usr/local/bin/wlsunset -t 5000 -T 6500
+ExecStart=%h/.local/bin/wlsunset
 Restart=on-failure
 Slice=app-graphical.slice
 
