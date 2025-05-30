@@ -3,13 +3,13 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='#ea51b2'><sup></sup></span>",
+            "notification": "<span foreground='#BF616A'><sup></sup></span>",
             "none": "",
-            "dnd-notification": "<span foreground='#ea51b2'><sup></sup></span>",
+            "dnd-notification": "<span foreground='#BF616A'><sup></sup></span>",
             "dnd-none": "",
-            "inhibited-notification": "<span foreground='#ea51b2'><sup></sup></span>",
+            "inhibited-notification": "<span foreground='#BF616A'><sup></sup></span>",
             "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='#ea51b2'><sup></sup></span>",
+            "dnd-inhibited-notification": "<span foreground='#BF616A'><sup></sup></span>",
             "dnd-inhibited-none": ""
         },
         "return-type": "json",

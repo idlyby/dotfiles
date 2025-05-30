@@ -47,7 +47,7 @@ elif [ "${_val}" -ge "${_warning}" ]; then
     _icon_color="${color3}"
     _icon=""
 else
-    _icon_color="${color5}"
+    _icon_color="${color2}"
     _icon=""
 fi
 

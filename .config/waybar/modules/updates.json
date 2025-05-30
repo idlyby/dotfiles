@@ -1,8 +1,8 @@
 {
     "custom/updates": {
-		"interval": 1800,
-		"tooltip": false,
-		"format": "{}",
-		"exec": "~/.config/waybar/scripts/updates-aur.sh"
-	}
+        "interval": 1800,
+        "tooltip": false,
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/updates-aur.sh"
+    }
 }

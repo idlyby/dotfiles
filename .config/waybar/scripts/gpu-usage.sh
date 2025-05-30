@@ -4,7 +4,7 @@
 [ -f "${XDG_CACHE_HOME}/wal/colors.sh" ] && . "${XDG_CACHE_HOME}/wal/colors.sh"
 
 _icon="󰺵"
-_icon_color="${color5}"
+_icon_color="${color2}"
 _percent=$(cat /sys/class/drm/card0/device/gpu_busy_percent)
 
 if [ "$_percent" -ge 85 ]; then

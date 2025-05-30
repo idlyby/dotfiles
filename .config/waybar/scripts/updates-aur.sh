@@ -11,7 +11,7 @@ if ! updates_aur=$(paru -Qum 2>/dev/null | wc -l); then
     updates_aur=0
 fi
 
-icon_color="${color5}"
+icon_color="${color2}"
 
 updates=$((updates_arch + updates_aur))
 

@@ -21,6 +21,6 @@
         "icon": true,
         "icon-size": 16,
         "offscreen-css": true,
-        "offscreen-css-text": "(inactive)",
+        "offscreen-css-text": "(inactive)"
     }
 }

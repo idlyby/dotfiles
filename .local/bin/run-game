@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+[[ $# -eq 0 ]] && echo "No command provided" && exit 1
+
+_command="/usr/bin/env LD_PRELOAD='' SDL_VIDEODRIVER='' /usr/bin/gamemoderun /usr/bin/gamescope -f -w 2560 -h 1440 -r 144 -o 24 --backend sdl --force-grab-cursor -- $*"
+
+eval "$_command"

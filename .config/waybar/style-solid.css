@@ -26,15 +26,15 @@
 
 * {
     border: none;
-    border-radius: 0px;
+    border-radius: 10px;
     min-height: 0;
-    margin: 1px;
+    margin: 0px;
     padding: 0;
 }
 
 * button:hover {
     box-shadow: inherit;
-    background: shade(alpha(@color1, 0.1), 1.25);
+    background: shade(alpha(@color5, 0.1), 1.25);
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -87,10 +87,10 @@ tooltip {
 #wireplumber.source,
 #workspaces,
 #window {
-    /*border: 2px solid @color8; */
+    border: 2px solid @color8;
     /*border-radius: 12px;*/
     padding: 0.5rem 0.8rem;
-    background-color: transparent;
+    background-color: @color0;
 }
 
 #cpu,
@@ -109,7 +109,7 @@ tooltip {
 #cpu.critical,
 #memory.critical,
 #network.disconnected {
-    color: @color2;
+    color: @color1;
     border: 2px solid @color1;
     animation-name: blink-critical;
     animation-duration: 3s;
@@ -128,7 +128,7 @@ tooltip {
 }
 
 #mode {
-    background: @color2;
+    background: @color1;
     border-bottom: 2px transparent;
     color: @color7;
 }
@@ -142,20 +142,18 @@ tooltip {
 }
 
 #workspaces button {
-    border-bottom: 2px solid transparent;
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
 }
 
 #workspaces button.focused {
-    border-bottom: 2px solid @color15;
     margin-bottom: 0px;
 }
 
 #workspaces button.urgent {
-    border-color: @color2;
-    color: @color2;
+    border-color: @color1;
+    color: @color1;
 }
 
 #custom-notification {

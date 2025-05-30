@@ -4,6 +4,6 @@
         "interval": 60,
         "format": "{}",
         "on-click": "piper",
-        "tooltip": false,
+        "tooltip": false
     }
 }

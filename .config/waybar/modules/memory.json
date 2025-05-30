@@ -1,11 +1,11 @@
 {
     "memory": {
-		"interval": 5,
-		"format": "<span color='#b45bcf'></span> {}%",
-		"on-click": "kitty --class htop -e htop",
-		"states": {
-			"warning": 70,
-			"critical": 90
-		}
-	}
+        "interval": 5,
+        "format": "<span color='#88C0D0'></span> {}%",
+        "on-click": "kitty --class htop -e htop",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    }
 }

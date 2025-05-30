@@ -1,13 +1,13 @@
 {
-	"gamemode": {
-		"format": "{glyph}",
-		"format-alt": "{glyph} {count}",
-		"glyph": "󰊖",
-		"hide-not-running": false,
-		"use-icon": false,
-		"icon-name": "input-gaming-symbolic",
-		"icon-spacing": 0,
-		"icon-size": 0,
-		"tooltip": false
-	}
+    "gamemode": {
+        "format": "{glyph}",
+        "format-alt": "{glyph} {count}",
+        "glyph": "󰊖",
+        "hide-not-running": false,
+        "use-icon": false,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 0,
+        "icon-size": 0,
+        "tooltip": false
+    }
 }

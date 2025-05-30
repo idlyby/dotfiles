@@ -1,11 +1,11 @@
 {
     "cpu": {
-		"interval": 5,
-		"format": "<span color='#b45bcf'></span> {usage}% ({load})",
-		"states": {
-			"warning": 70,
-			"critical": 90
-		},
-		"on-click": "kitty --class=htop -e htop"
-	}
+        "interval": 5,
+        "format": "<span color='#88C0D0'></span> {usage}% ({load})",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty --class=htop -e htop"
+    }
 }

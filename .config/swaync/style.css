@@ -8,7 +8,7 @@
 @define-color bg @color0;
 @define-color bg-hover rgb(68, 68, 68);
 @define-color bg-focus rgba(68, 68, 68, 0.6);
-@define-color bg-selected @color5;
+@define-color bg-selected @color1;
 
 .notification-row {
     outline: none;
@@ -90,33 +90,33 @@
 
 .body-image {
     margin-top: 6px;
-    background-color: white;
+    background-color: @color7;
     border-radius: 10px;
 }
 
 .summary {
-    color: white;
+    color: @color7;
     text-shadow: none;
 }
 
 .time {
-    color: white;
+    color: @color7;
     text-shadow: none;
 }
 
 .body {
     background: transparent;
-    color: white;
+    color: @color7;
     text-shadow: none;
 }
 
 .top-action-title {
-    color: white;
+    color: @color7;
     text-shadow: none;
 }
 
 .control-center-clear-all {
-    color: white;
+    color: @color7;
     text-shadow: none;
     background: @bg;
     border: 1px solid @border-color;

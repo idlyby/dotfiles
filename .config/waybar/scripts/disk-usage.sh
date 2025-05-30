@@ -10,7 +10,7 @@ fi
 
 percentage_used=$(df "$1" | awk 'END{ print $(NF-1) }' | sed 's/%//g')
 
-icon_color="${color5}"
+icon_color="${color2}"
 
 if [ "$percentage_used" -ge 90 ]; then
     icon_color="${color1}"
