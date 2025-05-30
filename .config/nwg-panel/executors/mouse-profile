@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-_id=$(ratbagctl list | cut -d":" -f1)
-_profile=$(ratbagctl "${_id}" profile active get)
-_dpi=$(ratbagctl "${_id}" dpi get)
-
-echo "$XDG_CONFIG_HOME"/nwg-panel/icons_light/mouse.svg
-echo "Profile ${_profile}: ${_dpi}"
