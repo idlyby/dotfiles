@@ -11,10 +11,10 @@
 		"format": "{}",
 		"exec": "~/.config/waybar/scripts/disk-usage.sh /mnt/bottle"
 	},
-    "custom/disk-flask": {
+    "custom/disk-vault": {
 		"interval": 60,
 		"tooltip": false,
 		"format": "{}",
-		"exec": "~/.config/waybar/scripts/disk-usage.sh /mnt/flask"
+		"exec": "~/.config/waybar/scripts/disk-usage.sh /mnt/vault"
 	}
 }

@@ -22,8 +22,10 @@
                 ""
             ]
         },
+        "tooltip": false,
         "scroll-step": 1,
-        "on-click": "pwvucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
         "ignored-sinks": [
             "Easy Effects Sink"
         ]
@@ -32,9 +34,10 @@
         "format": "{format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "<span color='#ea51b2'></span>",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -ui 1",
-        "on-scroll-down": "pamixer --default-source -ud 1"
+        "tooltip": false,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 1%-"
     },
     "wireplumber": {
         "scroll-step": 0.2,

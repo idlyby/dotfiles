@@ -3,6 +3,7 @@
         "exec": "~/.config/waybar/scripts/mouse-profile.sh",
         "interval": 60,
         "format": "{}",
-        "on-click": "piper"
+        "on-click": "piper",
+        "tooltip": false,
     }
 }

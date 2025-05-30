@@ -1,0 +1,26 @@
+{
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "󰙯",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "󰮂",
+            "default": ""
+        }
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "all-outputs": true,
+        "icon": true,
+        "icon-size": 16,
+        "offscreen-css": true,
+        "offscreen-css-text": "(inactive)",
+    }
+}

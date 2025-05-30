@@ -1,0 +1,42 @@
+[
+    {
+        "name": "top",
+        "id": "top",
+        "layer": "top",
+        "position": "top",
+        "height": 28,
+        "reload_style_on_change": true,
+        "include": [
+            "~/.config/waybar/modules/audio.json",
+            "~/.config/waybar/modules/clock.json",
+            "~/.config/waybar/modules/media.json",
+            "~/.config/waybar/modules/mouse.json",
+            "~/.config/waybar/modules/network.json",
+            "~/.config/waybar/modules/notification.json",
+            "~/.config/waybar/modules/uptime.json",
+            "~/.config/waybar/modules/gpu.json",
+            "~/.config/waybar/modules/sway.json",
+            "~/.config/waybar/modules/hyprland.json"
+        ],
+        "modules-left": [
+            "sway/workspaces",
+            "hyprland/workspaces",
+            "tray",
+            "custom/notification"
+        ],
+        "modules-center": [
+            "sway/window",
+            "hyprland/window"
+        ],
+        "modules-right": [
+            "custom/mouse",
+            "pulseaudio",
+            "pulseaudio#source",
+            "clock"
+        ],
+        "tray": {
+            "icon-size": 16,
+            "spacing": 10
+        }
+    }
+]

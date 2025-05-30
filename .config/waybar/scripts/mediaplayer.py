@@ -34,10 +34,15 @@ class PlayerManager:
         signal.signal(signal.SIGINT, signal_handler)
         signal.signal(signal.SIGTERM, signal_handler)
         signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+        signal.signal(signal.SIGUSR1, signal_handler)
+        
         self.selected_player = selected_player
         self.excluded_player = excluded_player.split(',') if excluded_player else []
 
         self.init_players()
+
+    def next_player(self):
+        print("todo")
 
     def init_players(self):
         for player in self.manager.props.player_names:
