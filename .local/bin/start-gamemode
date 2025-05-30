@@ -1,15 +1,18 @@
-#!/usr/bin/env sh
-# set -x
-# notify-send "Starting gamemode.."
+#!/usr/bin/env bash
 
-systemctl --user stop wlsunset.service
+# systemctl --user stop wlsunset.service
 
 if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
-    if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 1 ]; then
-        hyprctl --batch "\
-            keyword animations:enabled 0;\
-            keyword decoration:shadow:enabled 0;\
-            keyword decoration:blur:enabled 0"
-        exit
-    fi
+    screen_shader=$(hyprctl getoption decoration:screen_shader -j | jq -r '.str')
+    blur=$(hyprctl getoption decoration:blur:enabled -j | jq -r '.int')
+    shadow=$(hyprctl getoption decoration:shadow:enabled -j | jq -r '.int')
+    animations=$(hyprctl getoption animations:enabled -j | jq -r '.int')
+
+
+    [[ -n "$screen_shader" ]] && hyprctl keyword decoration:screen_shader ""
+    [[ "$blur" = 1 ]] && hyprctl keyword decoration:blur:enabled 0
+    [[ "$shadow" = 1 ]] && hyprctl keyword decoration:shadow:enabled 0
+    [[ "$animations" = 1 ]] && hyprctl keyword animations:enabled 0
+
+    exit 0
 fi
