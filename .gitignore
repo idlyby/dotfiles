@@ -80,3 +80,8 @@
 !.local/
 !.local/bin
 !.local/bin/**
+
+## Wallpapers
+!Pictures/
+!Pictures/Wallpapers
+!Pictures/Wallpapers/**
