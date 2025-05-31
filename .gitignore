@@ -63,6 +63,7 @@
 .config/systemd/user/multi-user.target.wants
 .config/systemd/user/pipewire.service.wants
 .config/systemd/user/sockets.target.wants
+.config/systemd/user/timers.target.wants
 .config/systemd/user/wayland-session@hyprland.desktop.target.wants
 .config/systemd/user/wayland-session@sway.desktop.target.wants
 .config/unity3d

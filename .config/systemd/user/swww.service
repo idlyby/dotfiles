@@ -1,0 +1,11 @@
+[Unit]
+Description=A Solution to your Wayland Wallpaper Woes.
+Documentation=man:swww(1)
+After=graphical-session.target
+After=wayland-session@sway.desktop.target
+After=wayland-session@hyprland.desktop.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=%h/.local/bin/swww
+Slice=app-graphical.slice
