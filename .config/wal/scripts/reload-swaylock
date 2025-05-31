@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-systemctl restart --user swayidle.service sway-audio-idle-inhibit.service
