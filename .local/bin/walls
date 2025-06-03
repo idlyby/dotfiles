@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+# set -x
+
+BASE_URL="https://wallhaven.cc/search?q=<keyword>&categories=110&purity=000&atleast=1920x1080&ratios=16x9%2C16x10&sorting=random&order=desc&ai_art_filter=1"
+DISPLAYS=(DP-1 DP-2 HDMI-A-1)
+WALLPAPERS_DIR="${XDG_PICTURES_DIR}/wallpapers"
+
+KEYWORDS=("nier" "elden+ring" "samurai+champloo" "cowboy+bebop")
+
+URLS=()
+for KEYWORD in "${KEYWORDS[@]}"; do
+    URLS+=("${BASE_URL//<keyword>/${KEYWORD}}")
+done
+URLS=($(shuf -e "${URLS[@]}"))
+
+URL="${URLS[0]}"
+
+CONTENT=$(curl -s "${URL}")
+CONTENT=($(echo ${CONTENT} | xidel -e '//a/@href[contains(., "/w/")]'))
+CONTENT=($(shuf -e "${CONTENT[@]}"))
+
+CONTENT=$(curl -s "${CONTENT[0]}")
+CONTENT=($(echo ${CONTENT} | xidel -e '//img/@src[contains(., "/full/")]'))
+
+WALLPAPER="${WALLPAPERS_DIR}/downloaded/$(echo "${CONTENT[0]}" | cut -f6 -d'/')"
+
+[[ ! -f "${WALLPAPER}" ]] && curl "${CONTENT[0]}" -o "${WALLPAPER}" >/dev/null 2>&1
+
+FILE_DIR=$(dirname "${WALLPAPER}")
+FILE_NAME=$(basename "${WALLPAPER}")
+if [ "${FILE_NAME##*.}" != "png" ]; then
+    CONVERTED_WALLPAPER="${FILE_DIR}/${FILE_NAME%.*}.png"
+    convert "${WALLPAPER}" "${CONVERTED_WALLPAPER}"
+    rm "${WALLPAPER}"
+    WALLPAPER="${CONVERTED_WALLPAPER}"
+    FILE_NAME=$(basename "${WALLPAPER}")
+fi
+
+WALLPAPER_RESOLUTION=$(identify "${WALLPAPER}" | awk '{print $3}')
+WALLPAPER_WIDTH=$(echo "${WALLPAPER_RESOLUTION}" | cut -f1 -d'x')
+WALLPAPER_HEIGHT=$(echo "${WALLPAPER_RESOLUTION}" | cut -f2 -d'x')
+
+if [[ "${WALLPAPER_WIDTH}" -lt 3840 ]] || [[ "${WALLPAPER_HEIGHT}" -lt 2880 ]]; then
+    convert "${WALLPAPER}" -alpha on -virtual-pixel transparent -filter Triangle +distort Affine "0,0 0,0 %w,0 3840,0 0,%h 0,2880" -alpha off -filter Gaussian "${WALLPAPER}" >/dev/null 2>&1
+fi
+
+if [ ! -f "${WALLPAPERS_DIR}/${FILE_NAME}_DP-1.png" ] || [ ! -f "${WALLPAPERS_DIR}/${FILE_NAME}_DP-2.png" ] || [ ! -f "${WALLPAPERS_DIR}/${FILE_NAME}_HDMI-A-1.png" ]; then
+    convert -crop 2560x1440+0+0 "${WALLPAPER}" "${WALLPAPERS_DIR}/${FILE_NAME}_DP-2.png"
+    convert -crop 2560x1440+0+1440 "${WALLPAPER}" "${WALLPAPERS_DIR}/${FILE_NAME}_DP-1.png"
+    convert -crop 1080x1920+2560+280 "${WALLPAPER}" "${WALLPAPERS_DIR}/${FILE_NAME}_HDMI-A-1.png"
+fi
+
+if [ "${XDG_CURRENT_DESKTOP}" == "sway" ]; then
+    # If swaybg is available, use it as prevents system freeze.
+    # See https://github.com/swaywm/sway/issues/5606
+    if command -v "swww" >/dev/null 2>&1; then
+        for DISPLAY in "${DISPLAYS[@]}"; do
+            swww img -o "${DISPLAY}" "${WALLPAPERS_DIR}/${FILE_NAME}_${DISPLAY}.png"
+        done
+    elif command -v "swaybg" >/dev/null 2>&1; then
+        # Grey background flicker is prevented by killing old swaybg process after new one.
+        # See https://github.com/swaywm/swaybg/issues/17#issuecomment-851680720
+        PID=$(pidof swaybg)
+        swaybg -o "${DISPLAYS[0]}" -i "${WALLPAPERS_DIR}/${FILE_NAME}_${DISPLAYS[0]}.png" -m fill \
+                -o "${DISPLAYS[1]}" -i "${WALLPAPERS_DIR}/${FILE_NAME}_${DISPLAYS[1]}.png" -m fill \
+                -o "${DISPLAYS[2]}" -i "${WALLPAPERS_DIR}/${FILE_NAME}_${DISPLAYS[2]}.png" -m fill 
+        if [ -n "${PID}" ]; then
+            sleep 1
+            kill "${PID}" 2>/dev/null
+        fi
+    else
+        for DISPLAY in "${DISPLAYS[@]}"; do
+            swaymsg output "${DISPLAY}" bg "${WALLPAPERS_DIR}/${FILE_NAME}_${DISPLAY}".png fill 2>/dev/null
+        done
+    fi
+else
+    # For simple WMs, use either feh or nitrogen
+    # TODO: These should take the scaling parameter $4 into account and use other options than --bg-fill
+    if command -v "feh" >/dev/null 2>&1; then
+        feh --bg-fill "${WALLPAPER}" 2>/dev/null
+    elif command -v "nitrogen" >/dev/null 2>&1; then
+        nitrogen --set-zoom-fill --save "${WALLPAPER}" 2>/dev/null
+    fi
+fi
