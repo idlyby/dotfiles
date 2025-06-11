@@ -16,3 +16,12 @@ export SDL_VIDEODRIVER="wayland,x11"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+export XDG_DESKTOP_DIR="${HOME}/.local/desktop"
+export XDG_DOWNLOAD_DIR="${HOME}/Downloads"
+export XDG_TEMPLATES_DIR="${HOME}/Templates"
+export XDG_DOCUMENTS_DIR="${HOME}/Documents"
+export XDG_PUBLICSHARE_DIR="/mnt/vault/public"
+export XDG_MUSIC_DIR="/mnt/vault/music"
+export XDG_PICTURES_DIR="/mnt/vault/pictures"
+export XDG_VIDEOS_DIR="/mnt/vault/videos"
