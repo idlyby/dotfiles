@@ -1,30 +1,35 @@
 #!/usr/bin/env bash
 
-filepath="$(xdg-user-dir PICTURES)/Screenshots"
-filename=screenshot_$(date +"%y-%m-%d_%H-%M-%S").png
+FILEPATH="$(xdg-user-dir PICTURES)/screenshots"
+FILENAME=screenshot_$(date +"%y-%m-%d_%H-%M-%S").png
 
-if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
-    screenshot="/usr/bin/grimblast"
-    params="--cursor --notify copysave"
-    entries="Active Screen Output Area"
-elif [ "$XDG_CURRENT_DESKTOP" = "sway" ]; then
-    screenshot="/usr/share/sway-contrib/grimshot"
-    params="--cursor --notify savecopy"
-    entries="Active Screen Output Area Window Anything"
+if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
+    /usr/bin/grimblast check
+    ENTRIES="Active Screen Output Area"
+elif [[ "$XDG_CURRENT_DESKTOP" == "sway" ]]; then
+    /usr/share/sway-contrib/grimshot check
+    ENTRIES="Active Screen Output Area Window Anything"
 else
     exit 0
 fi
 
-eval "$screenshot check" >/dev/null
+LINE_COUNT=$(echo "${ENTRIES}" | tr -d -c ' ' | wc -m)
+((LINE_COUNT++))
 
 if [ -n "$1" ]; then
-    selected="$1"
+    SELECTED="$1"
 else
-    selected=$(echo "${entries}" | tr ' ' '\n' | fuzzel -d -a top-right -l 6 -w 20 | awk '{print tolower($1)}')
+    SELECTED=$(echo "${ENTRIES}" | tr ' ' '\n' | fuzzel -d -a top-right -l "${LINE_COUNT}" -w 14 | awk '{print tolower($1)}')
 fi
 
-if [ -z "$selected" ]; then
+if [ -z "$SELECTED" ]; then
     exit 0
 fi
 
-eval "$screenshot $params $selected ${filepath}/${filename//screenshot/${selected}}"
+if [ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]; then
+    /usr/bin/grimblast --notify copysave "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
+elif [ "$XDG_CURRENT_DESKTOP" == "sway" ]; then
+    /usr/share/sway-contrib/grimshot --cursor --notify savecopy "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
+else
+    exit 0
+fi
