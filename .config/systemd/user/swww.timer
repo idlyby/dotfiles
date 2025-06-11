@@ -3,7 +3,7 @@ Description=Run swww hourly
 
 [Timer]
 OnBootSec=1min
-OnUnitActiveSec=1h
+OnUnitActiveSec=12h
 
 [Install]
 WantedBy=timers.target
