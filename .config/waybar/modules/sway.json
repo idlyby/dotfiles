@@ -15,10 +15,10 @@
         }
     },
     "sway/window": {
-        "format": "{}",
+        "format": "{app_id} - {shell}",
         "max-length": 50,
         "all-outputs": true,
-        "icon": true,
+        "icon": false,
         "icon-size": 16,
         "offscreen-css": true,
         "offscreen-css-text": "(inactive)"

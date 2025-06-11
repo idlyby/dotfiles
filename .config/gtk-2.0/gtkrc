@@ -3,7 +3,7 @@
 
 include "/home/edward/.gtkrc-2.0.mine"
 gtk-theme-name="Nordic"
-gtk-icon-theme-name="Tela-circle-nord"
+gtk-icon-theme-name="Tela-circle-nord-dark"
 gtk-font-name="Iosevka Nerd Font 10"
 gtk-cursor-theme-name="Nordic-cursors"
 gtk-cursor-theme-size=24

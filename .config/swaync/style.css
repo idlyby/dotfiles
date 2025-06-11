@@ -6,8 +6,8 @@
 
 @define-color border-color @color8;
 @define-color bg @color0;
-@define-color bg-hover rgb(68, 68, 68);
-@define-color bg-focus rgba(68, 68, 68, 0.6);
+@define-color bg-hover lighter(@color0);
+@define-color bg-focus alpha(@bg-hover, 0.6);
 @define-color bg-selected @color1;
 
 .notification-row {
@@ -20,29 +20,29 @@
 }
 
 .notification {
-    border-radius: 10px;
+    border-radius: 12px;
     margin: 6px 12px;
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 4px 2px alpha(@color8, 0.3);
     padding: 0;
 }
 
 .notification-content {
+    border-radius: 12px;
     background: transparent;
     padding: 6px;
-    border-radius: 10px;
 }
 
 .close-button {
+    border-radius: 100%;
     background: @color8;
     color: @color0;
     text-shadow: none;
     padding: 0 2px;
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 100%;
+    box-shadow: 0px 2px 4px 2px alpha(@color8, 0.3);
 }
 
 .close-button:hover {
-    background: rgb(30, 30, 30);
+    background: lighter(@color8);
     transition: all 0.15s ease-in-out;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .notification-default-action {
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 /* When alternative actions are visible */
@@ -71,7 +71,7 @@
 }
 
 .notification-action {
-    border-radius: 0px;
+    border-radius: 12px;
     border-top: none;
     border-right: none;
 }
@@ -89,9 +89,9 @@
 .image {}
 
 .body-image {
+    border-radius: 12px;
     margin-top: 6px;
     background-color: @color7;
-    border-radius: 10px;
 }
 
 .summary {
@@ -116,12 +116,12 @@
 }
 
 .control-center-clear-all {
+    border-radius: 12px;
     color: @color7;
     text-shadow: none;
     background: @bg;
     border: 1px solid @border-color;
     box-shadow: none;
-    border-radius: 10px;
 }
 
 .control-center-clear-all:hover {
@@ -129,7 +129,7 @@
 }
 
 .control-center-dnd {
-    border-radius: 10px;
+    border-radius: 12px;
     background: @bg;
     border: 1px solid @border-color;
     box-shadow: none;
@@ -144,7 +144,7 @@
 }
 
 .control-center {
-    background: rgba(0, 0, 0, 0.7);
+    background: alpha(@color0, 0.7);
 }
 
 .control-center-list {

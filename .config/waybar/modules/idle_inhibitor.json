@@ -5,5 +5,15 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "custom/idle-inhibitors": {
+        "exec": "~/.config/waybar/scripts/idle-inhibitors.sh",
+        "return-type": "json",
+        "interval": 60,
+        "format": "{icon} {text}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     }
 }

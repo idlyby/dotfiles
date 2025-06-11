@@ -26,36 +26,33 @@
 
 * {
     border: none;
-    border-radius: 0px;
+    border-radius: 12px;
     min-height: 0;
-    margin: 1px;
+    font-family: "Iosevka Nerd Font";
+    font-weight: 500;
+    font-size: 14px;
     padding: 0;
 }
 
 * button:hover {
     box-shadow: inherit;
-    background: shade(alpha(@color1, 0.1), 1.25);
+    background: shade(alpha(@color8, 0.1), 1.25);
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
 }
 
 window#waybar {
-    background: transparent;
+    background: @color0;
+    border: 2px solid @color8;
     color: @color7;
     font-family: 'Iosevka Nerd Font';
     font-size: 11px;
 }
 
-window#waybar.top {
-    margin: 5px 2px 0px 2px;
-}
-
-window#waybar.bot {
-    margin: 0px 2px 5px 2px;
-}
-
 tooltip {
+    background-color: @color0;
+    border: 2px solid @color8;
     border-radius: 0px;
 }
 
@@ -64,6 +61,7 @@ tooltip {
 #custom-disk-root,
 #custom-disk-bottle,
 #custom-disk-vault,
+#custom-idle-inhibitors,
 #custom-gpu,
 #custom-gpu-edge,
 #custom-gpu-junc,
@@ -85,12 +83,57 @@ tooltip {
 #tray,
 #wireplumber,
 #wireplumber.source,
-#workspaces,
-#window {
-    /*border: 2px solid @color8; */
-    /*border-radius: 12px;*/
-    padding: 0.5rem 0.8rem;
-    background-color: transparent;
+#tray,
+#window,
+#workspaces {
+    margin: 6px 0px 6px 6px;
+    padding: 2px 8px;
+}
+
+#custom-mouse,
+#pulseaudio,
+#pulseaudio.source {
+    color: @color0;
+    background-color: darker(@color7);
+    border: 2px solid @color7;
+}
+
+#custom-gpu-mem,
+#pulseaudio.source {
+    margin-right: 6px;
+}
+
+#clock,
+#cpu,
+#custom-idle-inhibitors,
+#custom-gpu,
+#custom-gpu-edge,
+#custom-gpu-junc,
+#custom-gpu-mem,
+#custom-notification,
+#idle_inhibitor,
+#memory,
+#tray,
+#window,
+#workspaces {
+    background: @color8;
+    border: 2px solid lighter(@color8);
+    color: @color7;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 2px 4px;
+}
+
+#workspaces button.focused {
+    background-color: @color8;
+}
+
+#workspaces button.urgent {
+    border-color: @color1;
 }
 
 #cpu,
@@ -102,6 +145,8 @@ tooltip {
 
 #cpu.warning,
 #memory.warning {
+    color: @color3;
+    border: 2px solid @color3;
     animation-name: blink-warning;
     animation-duration: 5s;
 }
@@ -115,10 +160,14 @@ tooltip {
     animation-duration: 3s;
 }
 
+#custom-notification,
+#custom-idle-inhibitors,
 #gamemode,
-#idle_inhibitor {
-    padding-right: 1.2rem;
-    color: @color8;
+#idle_inhibitor,
+#pulseaudio,
+#pulseaudio.source,
+#workspaces {
+    padding-right: 1.0rem;
 }
 
 #gamemode.running,
@@ -131,33 +180,4 @@ tooltip {
     background: @color2;
     border-bottom: 2px transparent;
     color: @color7;
-}
-
-#network {
-    min-width: 15.0em;
-}
-
-#workspaces {
-    font-size: 13px;
-}
-
-#workspaces button {
-    border-bottom: 2px solid transparent;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
-#workspaces button.focused {
-    border-bottom: 2px solid @color15;
-    margin-bottom: 0px;
-}
-
-#workspaces button.urgent {
-    border-color: @color2;
-    color: @color2;
-}
-
-#custom-notification {
-  font-family: "NotoSansMono Nerd Font";
 }
