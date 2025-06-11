@@ -1,0 +1,14 @@
+[Unit]
+Description=PipeWire Filter Chain
+After=pipewire.service
+BindsTo=pipewire.service
+ConditionUser=!root
+
+[Service]
+ExecStart=/usr/bin/pipewire -c %h/.config/pipewire/filter-chain.conf
+Type=simple
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=pipewire.service

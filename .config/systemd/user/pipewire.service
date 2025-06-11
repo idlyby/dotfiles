@@ -1,0 +1,20 @@
+[Unit]
+Description=PipeWire Multimedia Service
+Requires=pipewire.socket dbus.service 
+ConditionUser=!root
+
+[Service]
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+NoNewPrivileges=yes
+RestrictNamespaces=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+Type=simple
+ExecStart=/usr/bin/pipewire -c %h/.config/pipewire/pipewire.conf
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+Also=pipewire.socket
+WantedBy=default.target

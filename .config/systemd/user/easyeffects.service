@@ -1,0 +1,16 @@
+[Unit]
+Description=Apply effects to pipewire sinks
+After=graphical-session.target
+After=pipewire.service
+BindsTo=pipewire.service
+ConditionUser=!root
+
+[Service]
+ExecStart=/usr/bin/easyeffects --gapplication-service
+Type=simple
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=graphical-session.target
+WantedBy=pipewire.service
