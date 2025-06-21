@@ -26,6 +26,7 @@
 .config/glib-2.0
 .config/go
 .config/godot
+.config/google-chrome
 .config/htop
 .config/ibus
 .config/inkscape
@@ -35,6 +36,7 @@
 .config/libfm
 .config/libreoffice
 .config/lyrebird
+.config/MangoHud
 .config/maven
 .config/menus
 .config/mopidy
