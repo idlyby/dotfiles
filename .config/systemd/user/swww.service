@@ -6,5 +6,5 @@ After=swww-daemon.service
 
 [Service]
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
-ExecStart=/usr/bin/env DEBUG=1 %h/.local/bin/swww
+ExecStart=%h/.local/bin/swww
 Slice=app-graphical.slice

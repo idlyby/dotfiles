@@ -1,5 +1,29 @@
 #!/usr/bin/env bash
 
+usage() {
+    echo "Usage: $0 [-d] [-n]"
+    echo "Options:"
+    echo "   -d        Enable debugging"
+    echo "   -n        Notify on wallpaper change"
+}
+
+[[ $# -eq 0 ]] && echo "No command provided" && exit 1
+
+while getopts "dn" OPT; do
+    case "${OPT}" in
+        d)  set -x
+            ;;
+        n)  NOTIFY=1
+            ;;
+        h|help)  usage
+            exit 0
+            ;;
+        \?) echo "Invalid Option: -$OPTARG"
+            usage
+            exit 1
+            ;;
+    esac
+done
 if [[ "$DEBUG" -eq 1 ]]; then
     set -x
 fi
@@ -9,7 +33,7 @@ DISPLAYS=(DP-1 DP-2 HDMI-A-1)
 RESOLUTIONS=("2560x1440+0+1440" "2560x1440+0+0" "1080x1920+2560+680")
 WALLPAPERS_DIR="${XDG_PICTURES_DIR}/wallpapers"
 
-KEYWORDS=("nier")
+KEYWORDS=("nier" "bleach")
 
 URLS=()
 for KEYWORD in "${KEYWORDS[@]}"; do
@@ -59,7 +83,11 @@ for i in "${!WALLPAPERS[@]}"; do
     fi
 done
 
-notify-send "Changing wallpaper to ${WALLPAPER}"
+if [[ "${NOTIFY}" == 1 ]]; then
+    notify-send "Changing wallpaper to ${WALLPAPER}"
+else
+    echo "Changing wallpaper to ${WALLPAPER}"
+fi
 
 if [[ "${XDG_CURRENT_DESKTOP}" == "sway" ]] || [[ "${XDG_CURRENT_DESKTOP}" == "Hyprland" ]]; then
     if command -v "swww" >/dev/null 2>&1; then
