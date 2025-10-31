@@ -3,7 +3,7 @@
         "bass_enhancer#0": {
             "amount": 5.999999999999995,
             "blend": 0.0,
-            "bypass": true,
+            "bypass": false,
             "floor": 20.0,
             "floor-active": false,
             "harmonics": 8.5,
