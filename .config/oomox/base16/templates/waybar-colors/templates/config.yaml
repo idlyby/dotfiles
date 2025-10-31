@@ -1,0 +1,4 @@
+waybar-colors:
+  extension: /waybar.css
+  output: .cache/colors/
+  force_filename:

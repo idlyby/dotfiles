@@ -1,0 +1,4 @@
+sway-colors:
+  extension: /sway
+  output: .cache/colors/
+  force_filename:

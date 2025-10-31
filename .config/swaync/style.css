@@ -2,13 +2,13 @@
  * vim: ft=less 
  */
 
-@import url('file:///home/edward/.cache/wal/colors-waybar.css');
+@import url('file:///home/edward/.cache/colors/current/waybar.css');
 
-@define-color border-color @color8;
-@define-color bg @color0;
-@define-color bg-hover lighter(@color0);
+@define-color border-color @base04;
+@define-color bg @base00;
+@define-color bg-hover lighter(@base00);
 @define-color bg-focus alpha(@bg-hover, 0.6);
-@define-color bg-selected @color1;
+@define-color bg-selected @base02;
 
 .notification-row {
     outline: none;
@@ -22,7 +22,7 @@
 .notification {
     border-radius: 12px;
     margin: 6px 12px;
-    box-shadow: 0px 2px 4px 2px alpha(@color8, 0.3);
+    box-shadow: 0px 2px 4px 2px alpha(@base04, 0.3);
     padding: 0;
 }
 
@@ -34,15 +34,15 @@
 
 .close-button {
     border-radius: 100%;
-    background: @color8;
-    color: @color0;
+    background: @base04;
+    color: @base00;
     text-shadow: none;
     padding: 0 2px;
-    box-shadow: 0px 2px 4px 2px alpha(@color8, 0.3);
+    box-shadow: 0px 2px 4px 2px alpha(@base04, 0.3);
 }
 
 .close-button:hover {
-    background: lighter(@color8);
+    background: lighter(@base04);
     transition: all 0.15s ease-in-out;
 }
 
@@ -91,33 +91,33 @@
 .body-image {
     border-radius: 12px;
     margin-top: 6px;
-    background-color: @color7;
+    background-color: @base06;
 }
 
 .summary {
-    color: @color7;
+    color: @base06;
     text-shadow: none;
 }
 
 .time {
-    color: @color7;
+    color: @base06;
     text-shadow: none;
 }
 
 .body {
     background: transparent;
-    color: @color7;
+    color: @base06;
     text-shadow: none;
 }
 
 .top-action-title {
-    color: @color7;
+    color: @base06;
     text-shadow: none;
 }
 
 .control-center-clear-all {
     border-radius: 12px;
-    color: @color7;
+    color: @base06;
     text-shadow: none;
     background: @bg;
     border: 1px solid @border-color;
@@ -144,7 +144,7 @@
 }
 
 .control-center {
-    background: alpha(@color0, 0.7);
+    background: alpha(@base00, 0.7);
 }
 
 .control-center-list {

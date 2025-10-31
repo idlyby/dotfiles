@@ -1,0 +1,4 @@
+kitty-colors:
+  extension: /kitty.conf
+  output: .cache/colors/
+  force_filename:

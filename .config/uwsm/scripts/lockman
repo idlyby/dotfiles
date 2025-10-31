@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+SELECTION="$(printf "Copy Password %11s\nGenerate Password %8s" | fuzzel --dmenu -a top-right -l 2 -w 22 -p "Select an option: ")"
+
+print_error() {
+    zenity --error --text="$*"
+}
+
+confirm_action() {
+  local action="$1"
+  CONFIRMATION="$(printf "No %12s\nYes %11s" | fuzzel --dmenu -a top-right -l 2 -w 20 -p "$action?")"
+  [[ "$CONFIRMATION" == *"Yes"* ]]
+}
+
+case $SELECTION in
+  *"Copy"*)
+    gtklock;;
+  *"Generate"*)
+    FORM=$(zenity --forms --add-entry=Length --add-entry=Name --add-entry=User)
+    NEW_LENGTH=$(echo $FORM | cut -f1 -d'|')
+    NEW_NAME=$(echo $FORM | cut -f2 -d'|')
+    NEW_USER=$(echo $FORM | cut -f3 -d'|')
+    if [[ "$NEW_LENGTH" -lt 8 ]] || [[ "$NEW_LENGTH" -gt 24 ]]; then
+        print_error "Password length is invalid: $NEW_LENGTH"
+    fi
+    rbw generate "$NEW_LENGTH" "$NEW_NAME" "$NEW_USER" | wl-copy;;
+esac

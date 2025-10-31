@@ -1,0 +1,4 @@
+xcolors:
+  extension: /.Xresources
+  output: .cache/colors/
+  force_filename:

@@ -1,0 +1,4 @@
+fuzzel:
+  extension: /fuzzel.ini
+  output: .cache/colors/
+  force_filename:

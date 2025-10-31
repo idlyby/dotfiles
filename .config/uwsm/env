@@ -2,7 +2,7 @@ export THEME_FONT_FACE="Iosevka Nerd Font"
 export THEME_FONT_SIZE="10"
 
 export XCURSOR_SIZE=24
-export XCURSOR_THEME="Nordic-cursors"
+export XCURSOR_THEME="capitaine-cursors-light"
 
 export GDK_BACKEND="wayland,x11"
 
@@ -16,6 +16,8 @@ export SDL_VIDEODRIVER="wayland,x11"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+export MOZ_ENABLE_WAYLAND=1
 
 export XDG_DESKTOP_DIR="${HOME}/.local/desktop"
 export XDG_DOWNLOAD_DIR="${HOME}/Downloads"

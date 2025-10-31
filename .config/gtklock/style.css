@@ -1,9 +1,9 @@
-@import url('file:///home/edward/.cache/wal/colors-waybar.css');
+@import url('file:///home/edward/.cache/colors/current/waybar.css');
 
 * {
   border-radius: 0;
   border: none;
-  text-shadow: 1px 1px 3px alpha(@color0, 0.7);
+  text-shadow: 1px 1px 3px alpha(@base00, 0.7);
 }
 
 button {
@@ -16,17 +16,17 @@ button {
 }
 
 #unlock-button {
-  border: 1px solid @color8;
-  background-color: @color0;
+  border: 1px solid @base04;
+  background-color: @base00;
 }
 
 #input-field {
-  border: 1px solid @color8;
-  background-color: @color0;
+  border: 1px solid @base04;
+  background-color: @base00;
 }
 
 #playerctl-box {
-  border: 1px solid @color8;
+  border: 1px solid @base04;
   margin: 20px;
-  background-color: @color0;
+  background-color: @base00;
 }

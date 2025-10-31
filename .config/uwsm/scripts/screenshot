@@ -27,9 +27,9 @@ if [ -z "$SELECTED" ]; then
 fi
 
 if [ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]; then
-    /usr/bin/grimblast --notify copysave "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
+    /usr/bin/grimblast copysave "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
 elif [ "$XDG_CURRENT_DESKTOP" == "sway" ]; then
-    /usr/share/sway-contrib/grimshot --cursor --notify savecopy "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
+    /usr/share/sway-contrib/grimshot --cursor savecopy "${SELECTED}" "${FILEPATH}/${FILENAME//screenshot/${SELECTED}}"
 else
     exit 0
 fi

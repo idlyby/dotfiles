@@ -1,0 +1,98 @@
+{
+    "0": {
+        "name": "theme",
+        "config": {
+            "gtk2_hidpi": true,
+            "self.OPTIONS.GTK3_CURRENT_VERSION_ONLY": true,
+            "self.OPTIONS.EXPORT_CINNAMON_THEME": false,
+            "default_path": "/home/edward/.local/share/themes/<THEME_NAME>"
+        }
+    },
+    "1": {
+        "name": "icons",
+        "config": {
+            "default_path": "/home/edward/.local/share/icons/<THEME_NAME>"
+        }
+    },
+    "2": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "sway-colors",
+            "last_app": "sway-colors",
+            "default_path_sway-colors": "/home/edward"
+        }
+    },
+    "3": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "waybar-colors",
+            "last_app": "waybar-colors",
+            "default_path_waybar-colors": "/home/edward"
+        }
+    },
+    "4": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "fuzzel",
+            "last_app": "fuzzel",
+            "default_path_fuzzel": "/home/edward"
+        }
+    },
+    "5": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "kitty-colors",
+            "last_app": "kitty-colors",
+            "default_path_kitty-colors": "/home/edward"
+        }
+    },
+    "6": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "xcolors",
+            "last_app": "xcolors",
+            "default_path_xcolors": "/home/edward"
+        }
+    },
+    "7": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "breeze",
+            "last_app": "qt5ct",
+            "default_path_qt5ct": "/home/edward"
+        }
+    },
+    "8": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "breeze",
+            "last_app": "qt6ct",
+            "default_path_qt6ct": "/home/edward"
+        }
+    },
+    "9": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "default",
+            "last_app": "kde",
+            "default_path_kde": "/home/edward"
+        }
+    },
+    "10": {
+        "name": "base16",
+        "config": {
+            "default_path": "/home/edward",
+            "last_variant": "default",
+            "last_app": "qt-oomox-styleplugin",
+            "default_path_qt-oomox-styleplugin": "/home/edward"
+        }
+    }
+}
