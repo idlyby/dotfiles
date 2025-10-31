@@ -7,6 +7,7 @@
 !.config/
 !.config/**
 .config/.avalonia-build-tasks
+.config/.mozilla
 .config/abiword
 .config/autostart
 .config/Bitwarden
@@ -91,3 +92,6 @@
 !Pictures/
 !Pictures/Wallpapers
 !Pictures/Wallpapers/**
+
+## Etc
+.mozilla
