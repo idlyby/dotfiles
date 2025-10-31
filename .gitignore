@@ -10,6 +10,7 @@
 .config/abiword
 .config/autostart
 .config/Bitwarden
+.config/bless
 .config/bolt-launcher
 .config/BraveSoftware
 .config/cef_user_data
@@ -68,6 +69,7 @@
 .config/systemd/user/timers.target.wants
 .config/systemd/user/wayland-session@hyprland.desktop.target.wants
 .config/systemd/user/wayland-session@sway.desktop.target.wants
+.config/Twitch
 .config/unity3d
 .config/Upscayl
 .config/vesktop
